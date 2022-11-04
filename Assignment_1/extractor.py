@@ -1,6 +1,8 @@
 import json
 import os
 
+# this function recieves a the whole json object and extracts bbox data
+# returns the data in array format
 def bbox_extractor(data):
 	vehicle_bbox = []
 	licence_bbox = []
@@ -12,7 +14,8 @@ def bbox_extractor(data):
 			licence_bbox = items['points']['exterior'][0] + items['points']['exterior'][1]
 	return vehicle_bbox, licence_bbox
 
-
+# this function recieves a the whole json object and extracts attribute data
+# returns the data in key-value format
 def attribute_extractor(data):
 	vehicle_attribute = {}
 	licence_attribute = {}

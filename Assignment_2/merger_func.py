@@ -1,6 +1,6 @@
 import json
 import os
-
+#this function recieves the folder directory and returns the directory to be used in file_list_handler
 def directory_builder(file_directory):
 	path1 = os.path.normpath(file_directory)
 	dir = path1.split(os.sep)
@@ -9,6 +9,7 @@ def directory_builder(file_directory):
 		json_directory = json_directory + dir[item]+'/'
 	return json_directory
 
+#this function recieves the folder directory and returns list of files in that directory
 def file_list_handler(directory):
 	files = []
 	dir = directory_builder(directory)
@@ -16,7 +17,8 @@ def file_list_handler(directory):
 		files.append(dir+os.fsdecode(file))
 	return files
 
-
+#this function takes a list of files_directories and marges into a single file
+#its also responsible for the creation of marged file.
 def merge_JsonFiles(filename):
     result = []
     for f1 in filename:
