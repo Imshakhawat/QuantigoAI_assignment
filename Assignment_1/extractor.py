@@ -28,11 +28,3 @@ def attribute_extractor(data):
 	return vehicle_attribute, licence_attribute
 
 
-
-# directory = 'sampleJson/3.json'
-# file_name = "formatted_"+os.path.basename(directory)
-#
-# f = open(directory)
-# data = json.load(f)
-#
-# print(attribute_extractor(data))
